@@ -8,7 +8,8 @@ describe AddressList do
 
   describe 'validation' do
     it { should validate_presence_of(:title) }
-    it { should ensure_length_of(:title).is_at_least(6).is_at_most(40).with_message(/6文字以上40文字以下/) }
+    it { should ensure_length_of(:title).is_at_least(6).with_short_message(/6文字以上/) }
+    it { should ensure_length_of(:title).is_at_most(40).with_long_message(/40文字以内/) }
     
     describe 'total counts of address lists ' do
       subject { FactoryGirl.build(:address_list, user_id: 1) }
