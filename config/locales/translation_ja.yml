@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      address: address  #g
+      address_list: address_list  #g
+
+    attributes:
+      address:
+        city: city  #g
+        country: country  #g
+        email: email  #g
+        first_name: first_name  #g
+        last_name: last_name  #g
+        organization: organization  #g
+        phone: phone  #g
+        postal_code: postal_code  #g
+        prefecture: prefecture  #g
+        street_address1: street_address1  #g
+        street_address2: street_address2  #g
+
+      address_list:
+        description: description  #g
+        title: title  #g
