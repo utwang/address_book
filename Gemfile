@@ -40,9 +40,12 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-
 group :development do
   gem 'i18n_generators'
+end
+
+group :test do
+  gem 'shoulda-matchers'
 end
 
 group :development, :test do
