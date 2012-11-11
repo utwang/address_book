@@ -8,11 +8,11 @@ ja:
       address:
         city: city  #g
         country: country  #g
-        email: email  #g
-        first_name: first_name  #g
-        last_name: last_name  #g
+        email: メールアドレス
+        first_name: 名
+        last_name: 姓
         organization: organization  #g
-        phone: phone  #g
+        phone: 電話番号
         postal_code: postal_code  #g
         prefecture: prefecture  #g
         street_address1: street_address1  #g
