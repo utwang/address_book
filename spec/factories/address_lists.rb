@@ -1,9 +1,8 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# coding : utf-8
 
 FactoryGirl.define do
   factory :address_list do
-    user_id 1
-    title "MyString"
-    description "MyString"
+    title "友達アドレスリスト"
+    description "プライベート用のアドレスリスト"
   end
 end
