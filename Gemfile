@@ -56,6 +56,8 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'pry'
   gem 'ir_b'
+  gem 'faker'
+  gem 'faker-japanese'
 end
 
 group :production do
