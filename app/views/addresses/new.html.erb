@@ -1,5 +1,7 @@
 <h3>新規アドレス登録</h3>
 
-<%= render 'form' %>
+<%= form_for(@address, url: address_list_addresses_path(@address.address_list_id), html: {class: 'form-horizontal'}) do |f| %>
+  <%= render 'form', f: f %>
+<% end %>
 
 <%= link_to 'Back', address_lists_path %>

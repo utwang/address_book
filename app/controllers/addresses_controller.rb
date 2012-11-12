@@ -20,7 +20,6 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @address }
     end
   end
 
@@ -30,6 +29,7 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(params[:address])
+    @address.address_list_id = params[:address_list_id]
 
     respond_to do |format|
       if @address.save
@@ -45,7 +45,7 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.update_attributes(params[:address])
-        format.html { redirect_to @address, notice: 'Address was successfully updated.' }
+        format.html { redirect_to address_list_addresses_path(@address.address_list_id), notice: 'Address was successfully updated.' }
       else
         format.html { render action: "edit" }
       end

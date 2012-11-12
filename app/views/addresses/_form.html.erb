@@ -1,4 +1,3 @@
-<%= form_for(@address, url: address_list_addresses_path(@address), html: {class: 'form-horizontal'}) do |f| %>
   <% if @address.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@address.errors.count, "error") %> prohibited this address from being saved:</h2>
@@ -93,4 +92,3 @@
       <%= f.submit class: 'btn btn-primary' %>
     </div>
   </div>
-<% end %>
