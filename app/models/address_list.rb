@@ -1,7 +1,7 @@
 # coding: utf-8
 
 class AddressList < ActiveRecord::Base
-  has_many :addresses
+  has_many :addresses, dependent: :destroy
   attr_accessible :description, :title, :user_id
 
   validates :title, presence: true, length: 6..40

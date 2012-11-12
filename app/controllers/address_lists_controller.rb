@@ -22,4 +22,14 @@ class AddressListsController < ApplicationController
       redirect_to address_lists_path
     end
   end
+
+  def destroy
+    @address_list = AddressList.find(params[:id])
+    @address_list.destroy
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
 end

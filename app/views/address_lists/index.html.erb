@@ -6,23 +6,38 @@
     <tr> 
       <th><%= AddressList.human_attribute_name('title') %></th>
       <th><%= AddressList.human_attribute_name('description') %></th>
+      <th></th>
     </tr>
-    <% @address_lists.each_with_index do |address_list, i| %>
-      <tr id='<%= "address_list_#{i}" %>'>
+    <% @address_lists.each do |address_list| %>
+      <tr id='address_list_<%= address_list.id %>'>
         <td class='list_title'>
           <%= link_to address_list.title, address_list_addresses_path(address_list) %>
         </td>
         <td class='list_desc'>
           <%= address_list.description %>
         </td>
+        <td>
+          <span class='link-controls'>
+            <%= link_to_function '編集', '$(".edit-controls").toggle(); $(".link-controls").toggle()' %>
+            <%= link_to '削除', address_list_path(address_list), method: :delete,
+                         data: { confirm: '削除しますか?' }, remote: true %>
+          </span>
+        </td>
       </tr>
     <% end %>
   </table>
 </fieldset>
 <br />
+
 <fieldset>
-  <legend>新規登録</legend>
-  <%= form_for @new_list, url: {action: 'create'}, html: {class: 'form-horizontal'} do |f| %>
+  <legend>
+    <%= link_to_function '▶', '$("#disp").toggle(); $("#hide").toggle(); $("#entry-form").toggle()', id: 'disp' %>
+    <%= link_to_function '▼', '$("#disp").toggle(); $("#hide").toggle(); $("#entry-form").toggle()', 
+        id: 'hide', style: 'display:none' %>
+    新規登録
+  </legend>
+  <%= form_for @new_list, url: {action: 'create'}, 
+       html: {class: 'form-horizontal', id: 'entry-form', style: 'display:none'} do |f| %>
     <div class='control-group'>
       <%= f.label :title, class: 'control-label' %>
       <div class='controls'>

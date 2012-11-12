@@ -19,7 +19,8 @@
     <td><%= address.phone %></td>
     <td><%= link_to '詳細', address_list_address_path(address.address_list_id, address) %> | 
         <%= link_to '編集', edit_address_list_address_path(address.address_list_id, address) %> | 
-        <%= link_to '削除', address_list_address_path(address.address_list_id, address), method: :delete, data: { confirm: '削除しますか?' }, remote: true %>
+        <%= link_to '削除', address_list_address_path(address.address_list_id, address), method: :delete,
+                     data: { confirm: '削除しますか?' }, remote: true %>
     </td>
   </tr>
 <% end %>
