@@ -10,13 +10,12 @@ class AddressListsController < ApplicationController
     @address_lists = AddressList.all
     @address_list = AddressList.new(params[:address_list])
 
-    if address_list.save
+    if @address_list.save
       flash[:success] = "新しいアドレス帳を登録しました"
       redirect_to address_lists_path
     else
-      #TODO 複数行表示の対応
-      flash[:error] = "エラー: #{address_list.errors.messages}"
-      redirect_to address_lists_path
+      flash.now[:error] = "#{@address_list.errors.count}件のエラーが発生しました"
+      render 'index'
     end
   end
 
@@ -28,8 +27,10 @@ class AddressListsController < ApplicationController
     @address_list = AddressList.find(params[:id])
 
     if @address_list.update_attributes(params[:address_list])
-      redirect_to address_lists_path, notice: 'Address was successfully updated.'
+      flash[:success] = 'アドレス帳を変更しました'
+      redirect_to address_lists_path
     else
+      flash.now[:error] = "#{@address_list.errors.count}件のエラーが発生しました"
       render action: "edit"
     end
   end

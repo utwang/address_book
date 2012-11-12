@@ -5,11 +5,11 @@ class AddressList < ActiveRecord::Base
   attr_accessible :description, :title
 
   validates :title, presence: true, length: 6..40
-  validate :counts_within_limits
+  validate :counts_within_limits, if: -> { new_record? }
 
   private
   def counts_within_limits
-    if self.class.where(user_id: self.user_id).count == 3
+    if self.class.all.count == 3
       errors.add(:lists_counts, "アドレス帳の登録は3つまでとなります。")
     end
   end

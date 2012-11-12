@@ -1,5 +1,15 @@
 <h3>アドレス帳</h3>
 
+<% if @address_list.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @address_list.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <fieldset>
   <legend>アドレス帳一覧</legend>
   <table class='table table-striped table-condensed'>
@@ -34,7 +44,7 @@
         id: 'hide', style: 'display:none' %>
     新規登録
   </legend>
-  <%= form_for @new_list, url: {action: 'create'}, 
+  <%= form_for @address_list, url: {action: 'create'}, 
        html: {class: 'form-horizontal', id: 'entry-form', style: 'display:none'} do |f| %>
     <div class='control-group'>
       <%= f.label :title, class: 'control-label' %>
