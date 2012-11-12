@@ -23,6 +23,20 @@ class AddressListsController < ApplicationController
     end
   end
 
+  def edit
+    @address_list = AddressList.find(params[:id])
+  end
+
+  def update
+    @address_list = AddressList.find(params[:id])
+
+    if @address_list.update_attributes(params[:address_list])
+      redirect_to address_lists_path, notice: 'Address was successfully updated.'
+    else
+      render action: "edit"
+    end
+  end
+
   def destroy
     @address_list = AddressList.find(params[:id])
     @address_list.destroy

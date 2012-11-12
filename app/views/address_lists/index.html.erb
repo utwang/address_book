@@ -17,11 +17,9 @@
           <%= address_list.description %>
         </td>
         <td>
-          <span class='link-controls'>
-            <%= link_to_function '編集', '$(".edit-controls").toggle(); $(".link-controls").toggle()' %>
-            <%= link_to '削除', address_list_path(address_list), method: :delete,
-                         data: { confirm: '削除しますか?' }, remote: true %>
-          </span>
+          <%= link_to '編集', edit_address_list_path(address_list) %>
+          <%= link_to '削除', address_list_path(address_list), method: :delete,
+                       data: { confirm: '削除しますか?' }, remote: true %>
         </td>
       </tr>
     <% end %>
@@ -54,8 +52,9 @@
 
     <div class='control-group'>
       <div class='controls'>
-        <%= f.submit 'Create', class: 'btn btn-primary' %>
+        <%= f.submit '登録する', class: 'btn btn-primary' %>
       </div>
     </div>
   <% end %>
 </fieldset>
+
