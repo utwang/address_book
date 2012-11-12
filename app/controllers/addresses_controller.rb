@@ -57,7 +57,7 @@ class AddressesController < ApplicationController
     @address.destroy
 
     respond_to do |format|
-      format.html { redirect_to addresses_url }
+      format.js
     end
   end
 end
