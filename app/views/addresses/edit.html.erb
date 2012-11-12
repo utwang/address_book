@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @address %> |
-<%= link_to 'Back', addresses_path %>
+<%= link_to 'Show', address_list_address_path(@address.address_list_id, @address) %> |
+<%= link_to 'Back', address_list_addresses_path %>

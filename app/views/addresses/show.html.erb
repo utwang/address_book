@@ -1,5 +1,34 @@
 <p id="notice"><%= notice %></p>
 
+<%= label :address, :last_name, Address.human_attribute_name(:last_name) %>
+<%= @address.last_name %>
 
-<%= link_to 'Edit', edit_address_path(@address) %> |
-<%= link_to 'Back', addresses_path %>
+<%= label :address, :first_name, Address.human_attribute_name(:first_name), class: 'control-label' %>
+<%= @address.first_name %>
+
+<%= label :address, :email, Address.human_attribute_name(:email), class: 'control-label' %>
+<%= @address.email %>
+
+<%= label :address, :phone, Address.human_attribute_name(:phone), class: 'control-label' %>
+<%= @address.phone %>
+
+<%= label :address, :organization, Address.human_attribute_name(:organization), class: 'control-label' %>
+<%= @address.organization %>
+
+<%= label :address, :country, Address.human_attribute_name(:country), class: 'control-label' %>
+<%= @address.first_name %>
+
+<%= label :address, :postal_code, Address.human_attribute_name(:postal_code), class: 'control-label' %>
+<%= @address.postal_code %>
+
+<%= label :address, :prefecture, Address.human_attribute_name(:prefecture), class: 'control-label' %>
+<%= @address.prefecture %>
+
+<%= label :address, :street_address1, Address.human_attribute_name(:street_address1), class: 'control-label' %>
+<%= @address.street_address1 %>
+
+<%= label :address, :street_address2, Address.human_attribute_name(:street_address2), class: 'control-label' %>
+<%= @address.street_address2 %>
+
+<%= link_to 'Edit', edit_address_list_address_path(@address.address_list_id, @address) %> |
+<%= link_to 'Back', address_list_addresses_path %>
