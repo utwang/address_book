@@ -12,15 +12,15 @@ describe AddressList do
     it { should ensure_length_of(:title).is_at_most(40).with_long_message(/40文字以内/) }
     
     describe 'total counts of address lists ' do
-      subject { FactoryGirl.build(:address_list, user_id: 1) }
+      subject { FactoryGirl.build(:address_list) }
     
       context 'with in limits' do
-        before { FactoryGirl.create_list(:address_list, 2, user_id: 1) }
+        before { FactoryGirl.create_list(:address_list, 2) }
         it { should be_valid }
       end
 
       context 'exceed limits' do
-        before { FactoryGirl.create_list(:address_list, 3, user_id: 1) }
+        before { FactoryGirl.create_list(:address_list, 3) }
         it { should_not be_valid }
 
         # TODO 余裕があればリファクタリング

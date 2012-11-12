@@ -2,7 +2,7 @@
 
 class AddressList < ActiveRecord::Base
   has_many :addresses, dependent: :destroy
-  attr_accessible :description, :title, :user_id
+  attr_accessible :description, :title
 
   validates :title, presence: true, length: 6..40
   validate :counts_within_limits

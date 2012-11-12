@@ -6,7 +6,7 @@ describe "AddressPages" do
   subject { page }
 
   describe "GET /address_index_pages" do
-    let!(:address_list0) { FactoryGirl.create(:address_list, user_id: 1, title: 'プライベート', description: '友人') } 
+    let!(:address_list0) { FactoryGirl.create(:address_list, title: 'プライベート', description: '友人') } 
     let!(:address0) { FactoryGirl.create(:address, address_list: address_list0, email: 'sample0@example.com') } 
     let!(:address1) { FactoryGirl.create(:address, address_list: address_list0, email: 'sample1@example.com') } 
 

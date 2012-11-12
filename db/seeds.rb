@@ -4,7 +4,7 @@ AddressList.delete_all
 Address.delete_all
 
 3.times do |n|
-  AddressList.create(user_id: 1, title: "アドレス帳#{n}", description: "#{n}番目のアドレス帳")
+  AddressList.create(title: "アドレス帳#{n}", description: "#{n}番目のアドレス帳")
 end
 
 AddressList.all.each do |address_list|
