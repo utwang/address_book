@@ -21,3 +21,10 @@ ja:
       address_list:
         description: 概要
         title: アドレス帳名 
+
+  views:
+    pagination:
+      first: '<<'
+      last: '>>'
+      previous: '<' 
+      next: '>'

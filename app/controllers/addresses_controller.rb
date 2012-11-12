@@ -1,6 +1,7 @@
 class AddressesController < ApplicationController
   def index
     @addresses = Address.where(address_list_id: params[:address_list_id])
+                        .order(:last_name).page params[:page]
     @address_list = AddressList.find(params[:address_list_id])
 
     respond_to do |format|
