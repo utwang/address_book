@@ -11,7 +11,7 @@
       <% @address_lists.each_with_index do |address_list, i| %>
       <tr id='<%= "address_list_#{i}" %>'>
         <td class='list_title'>
-          <%= link_to address_list.title, '#'%>
+          <%= link_to address_list.title, address_list_addresses_path(address_list) %>
         </td>
         <td class='list_desc'>
           <%= address_list.description %>
