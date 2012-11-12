@@ -19,5 +19,5 @@ ja:
         street_address2: street_address2  #g
 
       address_list:
-        description: description  #g
-        title: title  #g
+        description: 概要
+        title: アドレス帳名 

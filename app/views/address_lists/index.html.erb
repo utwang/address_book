@@ -1,0 +1,35 @@
+<h1>AddressLists#index</h1>
+<p>Find me in app/views/address_lists/index.html.erb</p>
+
+<fieldset>
+  <legend>アドレス帳一覧</legend>
+  <table>
+    <tr> 
+      <th><%= AddressList.human_attribute_name('title') %></th>
+      <th><%= AddressList.human_attribute_name('description') %></th>
+    </tr>
+      <% @address_lists.each_with_index do |address_list, i| %>
+      <tr id='<%= "address_list_#{i}" %>'>
+        <td class='list_title'>
+          <%= link_to address_list.title, '#'%>
+        </td>
+        <td class='list_desc'>
+          <%= address_list.description %>
+        </td>
+        </tr>
+      <% end %>
+  </table>
+</fieldset>
+<br />
+<fieldset>
+  <legend>新規登録</legend>
+  <%= form_for @new_list, url: {action: 'create'} do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+  <% end %>
+</fieldset>
