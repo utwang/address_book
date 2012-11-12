@@ -6,17 +6,17 @@ ja:
 
     attributes:
       address:
-        city: city  #g
-        country: country  #g
+        city: 市区町村
+        country: 国
         email: メールアドレス
         first_name: 名
         last_name: 姓
-        organization: organization  #g
+        organization: 組織
         phone: 電話番号
-        postal_code: postal_code  #g
-        prefecture: prefecture  #g
-        street_address1: street_address1  #g
-        street_address2: street_address2  #g
+        postal_code: 郵便番号
+        prefecture: 都道府県
+        street_address1: 番地
+        street_address2: マンションなど
 
       address_list:
         description: 概要

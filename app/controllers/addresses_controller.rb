@@ -16,7 +16,7 @@ class AddressesController < ApplicationController
   end
 
   def new
-    @address = Address.new
+    @address = Address.new(address_list_id: params[:address_list_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -33,7 +33,7 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to @address, notice: 'Address was successfully created.' }
+        format.html { redirect_to address_list_addresses_path(@address.address_list_id), notice: 'Address was successfully created.' }
       else
         format.html { render action: "new" }
       end
