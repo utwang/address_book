@@ -1,14 +1,13 @@
-<h1>AddressLists#index</h1>
-<p>Find me in app/views/address_lists/index.html.erb</p>
+<h3>アドレス帳</h3>
 
 <fieldset>
   <legend>アドレス帳一覧</legend>
-  <table>
+  <table class='table table-striped table-condensed'>
     <tr> 
       <th><%= AddressList.human_attribute_name('title') %></th>
       <th><%= AddressList.human_attribute_name('description') %></th>
     </tr>
-      <% @address_lists.each_with_index do |address_list, i| %>
+    <% @address_lists.each_with_index do |address_list, i| %>
       <tr id='<%= "address_list_#{i}" %>'>
         <td class='list_title'>
           <%= link_to address_list.title, address_list_addresses_path(address_list) %>
@@ -16,20 +15,32 @@
         <td class='list_desc'>
           <%= address_list.description %>
         </td>
-        </tr>
-      <% end %>
+      </tr>
+    <% end %>
   </table>
 </fieldset>
 <br />
 <fieldset>
   <legend>新規登録</legend>
-  <%= form_for @new_list, url: {action: 'create'} do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <%= form_for @new_list, url: {action: 'create'}, html: {class: 'form-horizontal'} do |f| %>
+    <div class='control-group'>
+      <%= f.label :title, class: 'control-label' %>
+      <div class='controls'>
+        <%= f.text_field :title %>
+      </div>
+    </div>
+    
+    <div class='control-group'>
+      <%= f.label :description, class: 'control-label' %>
+      <div class='controls'>
+        <%= f.text_field :description %>
+      </div>
+    </div>
 
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-
-    <%= f.submit 'Create', class: 'btn btn-primary' %>
+    <div class='control-group'>
+      <div class='controls'>
+        <%= f.submit 'Create', class: 'btn btn-primary' %>
+      </div>
+    </div>
   <% end %>
 </fieldset>

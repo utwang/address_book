@@ -1,8 +1,8 @@
-<h1>Editing address</h1>
+<h3>アドレスの変更</h3>
 
 <%= form_for(@address, url: address_list_address_path(@address.address_list_id, @address), html: {class: 'form-horizontal'}) do |f| %>
   <%= render 'form', f: f %>
 <% end %>
 
-<%= link_to 'Show', address_list_address_path(@address.address_list_id, @address) %> |
-<%= link_to 'Back', address_list_addresses_path %>
+<%= link_to '詳細', address_list_address_path(@address.address_list_id, @address) %> |
+<%= link_to '一覧', address_list_addresses_path %>

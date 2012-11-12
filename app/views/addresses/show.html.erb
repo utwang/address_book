@@ -1,34 +1,38 @@
+<h3>アドレス詳細</h3>
+
 <p id="notice"><%= notice %></p>
 
-<%= label :address, :last_name, Address.human_attribute_name(:last_name) %>
-<%= @address.last_name %>
+<dl class='dl-horizontal'>
+  <dt><%= Address.human_attribute_name(:last_name) %></dt>
+  <dd><%= @address.last_name %></dd>
 
-<%= label :address, :first_name, Address.human_attribute_name(:first_name), class: 'control-label' %>
-<%= @address.first_name %>
+  <dt><%= Address.human_attribute_name(:first_name) %></dt>
+  <dd><%= @address.first_name %></dd>
 
-<%= label :address, :email, Address.human_attribute_name(:email), class: 'control-label' %>
-<%= @address.email %>
+  <dt><%= Address.human_attribute_name(:email) %></dt>
+  <dd><%= @address.email %></dd>
 
-<%= label :address, :phone, Address.human_attribute_name(:phone), class: 'control-label' %>
-<%= @address.phone %>
+  <dt><%= Address.human_attribute_name(:phone) %></dt>
+  <dd><%= @address.phone %></dd>
 
-<%= label :address, :organization, Address.human_attribute_name(:organization), class: 'control-label' %>
-<%= @address.organization %>
+  <dt><%= Address.human_attribute_name(:organization) %></dt>
+  <dd><%= @address.organization %></dd>
 
-<%= label :address, :country, Address.human_attribute_name(:country), class: 'control-label' %>
-<%= @address.first_name %>
+  <dt><%= Address.human_attribute_name(:country) %></dt>
+  <dd><%= @address.country %></dd>
 
-<%= label :address, :postal_code, Address.human_attribute_name(:postal_code), class: 'control-label' %>
-<%= @address.postal_code %>
+  <dt><%= Address.human_attribute_name(:postal_code) %></dt>
+  <dd><%= @address.postal_code %></dd>
 
-<%= label :address, :prefecture, Address.human_attribute_name(:prefecture), class: 'control-label' %>
-<%= @address.prefecture %>
+  <dt><%= Address.human_attribute_name(:prefecture) %></dt>
+  <dd><%= @address.prefecture %></dd>
 
-<%= label :address, :street_address1, Address.human_attribute_name(:street_address1), class: 'control-label' %>
-<%= @address.street_address1 %>
+  <dt><%= Address.human_attribute_name(:street_address1) %></dt>
+  <dd><%= @address.street_address1 %></dd>
 
-<%= label :address, :street_address2, Address.human_attribute_name(:street_address2), class: 'control-label' %>
-<%= @address.street_address2 %>
+  <dt><%= Address.human_attribute_name(:street_address2) %></dt>
+  <dd><%= @address.street_address2 %></dd>
+</dl>
 
-<%= link_to 'Edit', edit_address_list_address_path(@address.address_list_id, @address) %> |
-<%= link_to 'Back', address_list_addresses_path %>
+<%= link_to '編集', edit_address_list_address_path(@address.address_list_id, @address) %> |
+<%= link_to '戻る', address_list_addresses_path %>
