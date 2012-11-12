@@ -26,9 +26,8 @@ describe Address do
    # it { should validate_format_of(:email).not_with('xyz.abcexample.com')
    #                                       .with_message(/メールアドレスは不正な値です。/) } #
 
-   # TODO consoleで通るがspecで通らないので後回し
-   # it { should validate_format_of(:phone).with('090-1234-5678') } #
-   # it { should validate_format_of(:phone).with('03-1111-3333') } #
+    it { should validate_format_of(:phone).with('090-1234-5678') }
+    it { should validate_format_of(:phone).with('03-1111-3333') }
 
     it { should validate_format_of(:phone).not_with('090-AB34-5678') }
     it { should validate_format_of(:phone).not_with('03-1-5678') }
