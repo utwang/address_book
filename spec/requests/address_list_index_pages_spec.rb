@@ -13,7 +13,7 @@ describe "AddressListIndexPages" do
     it { should have_css('#address_list_0 td.list_title', text: 'プライベート') }
     it { should have_css('#address_list_0 td.list_desc', text: '友人') }
     #TODO アドレス一覧作成後にリンク先のパス変更
-    it { should have_link('プライベート', href: '#') }
+    it { should have_link('プライベート', href:  address_list_addresses_path(address_list0) ) }
   end
 
   describe "create a new address_list" do

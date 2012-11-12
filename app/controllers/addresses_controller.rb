@@ -1,6 +1,4 @@
 class AddressesController < ApplicationController
-  # GET /addresses
-  # GET /addresses.json
   def index
     @addresses = Address.where(address_list_id: params[:address_list_id])
 
@@ -9,8 +7,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  # GET /addresses/1
-  # GET /addresses/1.json
   def show
     @address = Address.find(params[:id])
 
@@ -19,8 +15,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  # GET /addresses/new
-  # GET /addresses/new.json
   def new
     @address = Address.new
 
@@ -30,13 +24,10 @@ class AddressesController < ApplicationController
     end
   end
 
-  # GET /addresses/1/edit
   def edit
     @address = Address.find(params[:id])
   end
 
-  # POST /addresses
-  # POST /addresses.json
   def create
     @address = Address.new(params[:address])
 
@@ -49,8 +40,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  # PUT /addresses/1
-  # PUT /addresses/1.json
   def update
     @address = Address.find(params[:id])
 
@@ -63,8 +52,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  # DELETE /addresses/1
-  # DELETE /addresses/1.json
   def destroy
     @address = Address.find(params[:id])
     @address.destroy
