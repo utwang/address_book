@@ -16,15 +16,12 @@ describe Address do
     it { should validate_uniqueness_of(:email) }
 
     it { should validate_format_of(:email).with('xyz.abc@example.com') }
+    it { should validate_format_of(:email).with('xyz_abc@example.com') }
 
-   # TODO localeの設定不備によりテスト通らず、後で対応
-   #
-   # it { should validate_format_of(:email).not_with('xyz.abc@example')
-   #                                       .with_message(/メールアドレスは不正な値です。/) } #
-   # it { should validate_format_of(:email).not_with('xyz_abc@example.com')
-   #                                       .with_message(/メールアドレスは不正な値です。/) } #
-   # it { should validate_format_of(:email).not_with('xyz.abcexample.com')
-   #                                       .with_message(/メールアドレスは不正な値です。/) } #
+    it { should validate_format_of(:email).not_with('xyz.abc@example')
+                                          .with_message(/は不正な値です。/) }
+    it { should validate_format_of(:email).not_with('xyz.abcexample.com')
+                                          .with_message(/は不正な値です。/) }
 
     it { should validate_format_of(:phone).with('090-1234-5678') }
     it { should validate_format_of(:phone).with('03-1111-3333') }

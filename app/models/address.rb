@@ -1,6 +1,7 @@
 class Address < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PHONE_REGEX = /^0[\d-]{11,12}$/
+  VALID_POSTAL_CODE_REGEX = /^\d{3}-\d{4}$/
 
   belongs_to :address_list
 
@@ -11,5 +12,6 @@ class Address < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true, format: {with: VALID_EMAIL_REGEX}
   validates :phone, presence: true, format: {with: VALID_PHONE_REGEX}
+  validates :postal_code, format: {with: VALID_POSTAL_CODE_REGEX}
 
 end
