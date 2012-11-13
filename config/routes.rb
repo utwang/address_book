@@ -1,4 +1,7 @@
 AddressBook::Application.routes.draw do
+
+  root :to => 'address_lists#index'
+
   resources :address_lists, except: [:show, :new] do
     resources :addresses
   end
